@@ -32,21 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Footer links handling
+    const aboutLink = document.getElementById('link-about');
     const datenschutzLink = document.getElementById('link-datenschutz');
     const impressumLink = document.getElementById('link-impressum');
     const kontaktLink = document.getElementById('link-kontakt');
 
+    if (aboutLink) {
+        aboutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('About Panum:\n\nPanum ist ein unabhängiges Projekt, um den Schulalltag zu erleichtern. Es steht in keiner Verbindung zu schulNetz.\n\nEntwickelt von Minoshek Kishokumar.');
+        });
+    }
+
     if (datenschutzLink) {
         datenschutzLink.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('Datenschutz:\n\nDeine Daten werden nur lokal in deinem Browser gespeichert und verlassen nie deinen Computer. Wir erheben keine personenbezogenen Daten.');
+            alert('Datenschutz:\n\nPanum speichert KEINE Daten auf externen Servern. Alle Daten (Noten, Einstellungen) bleiben lokal in deinem Browser (LocalStorage/SyncStorage). Wir tracken dich nicht und sammeln keine persönlichen Informationen.');
         });
     }
 
     if (impressumLink) {
         impressumLink.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('Unter Bearbeitung');
+            alert('Impressum:\n\nMinoshek Kishokumar\n[Adresse auf Anfrage]\nKontakt: Minoshekk@gmail.com\n\nDies ist ein privates, nicht-kommerzielles Projekt.');
         });
     }
 
